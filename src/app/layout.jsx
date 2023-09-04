@@ -1,8 +1,5 @@
 import RootLayout from "@/components/RootLayout";
 import "./globals.css";
-import { Inter } from "next/font/google";
-
-const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
 	title: {
@@ -13,8 +10,10 @@ export const metadata = {
 
 export default function Layout({ children }) {
 	return (
-		<html lang="en">
-			<body className={inter.className}>
+		<html
+			lang="en"
+			className="h-full bg-neutral-950 text-base antialiased text-neutral-100">
+			<body className="min-h-full flex-col flex">
 				<RootLayout>{children}</RootLayout>
 			</body>
 		</html>

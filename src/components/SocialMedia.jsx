@@ -2,7 +2,7 @@ import Link from "next/link";
 import clsx from "clsx";
 import { BsInstagram, BsGithub } from "react-icons/bs";
 
-const SocialMediaProfiles = [
+export const SocialMediaProfiles = [
 	{
 		title: "Github",
 		href: "https://github.com/danudenny",
@@ -24,7 +24,7 @@ const SocialMedia = ({ className, invert = false }) => {
 				invert ? "text-white" : "text-neutral-950",
 				className
 			)}>
-			{SocialMediaProfiles.map((item) => {
+			{SocialMediaProfiles.map((item) => (
 				<li key={item.title}>
 					<Link
 						href={item.href}
@@ -37,8 +37,8 @@ const SocialMedia = ({ className, invert = false }) => {
 						)}>
 						<item.icon className="h-6 w-6 fill-current" />
 					</Link>
-				</li>;
-			})}
+				</li>
+			))}
 		</ul>
 	);
 };

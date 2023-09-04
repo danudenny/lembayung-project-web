@@ -12,6 +12,7 @@ import Button from "./Button";
 import clsx from "clsx";
 import Office from "./Office";
 import SocialMedia from "./SocialMedia";
+import Footer from "./Footer";
 
 const Header = ({
 	panelId,
@@ -173,7 +174,7 @@ const RootLayoutInner = ({ children }) => {
 								<div className="grid grid-cols-1 gap-y-10 pb-16 pt-10 sm:grid-cols-2 sm:pt-16">
 									<div>
 										<h2 className="font-display text-base font-semibold text-white">
-											Our Office
+											Our Studio
 										</h2>
 										<Office
 											invert
@@ -192,6 +193,17 @@ const RootLayoutInner = ({ children }) => {
 					</motion.div>
 				</motion.div>
 			</header>
+			<motion.div
+				layout
+				className="relative flex flex-auto overflow-hidden bg-white pt-14"
+				style={{ borderTopLeftRadius: 40, borderTopRightRadius: 40 }}>
+				<motion.div
+					layout
+					className="isolate relative flex w-full flex-col pt-9">
+					<main className="w-full flex-auto">{children}</main>
+					<Footer />
+				</motion.div>
+			</motion.div>
 		</MotionConfig>
 	);
 };
